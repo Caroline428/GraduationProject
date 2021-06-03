@@ -67,6 +67,7 @@ public class BlogController {
     @PostMapping("/blog/{id}/edit")
     public String blogPostUpdate(@PathVariable(value = "id") Long id, @RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
         Post post = postRepository.findById(id).orElseThrow(null);
+        post.setTitle(title);
         post.setAnons(anons);
         post.setFull_text(full_text);
         postRepository.save(post);

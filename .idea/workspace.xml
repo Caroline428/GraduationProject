@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e83bc98-dc1c-4859-b902-2914f4f3a986" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/configs/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/models/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/repo/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/repo/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/controllers/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/controllers/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itkrol/KrolSpring/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itkrol/KrolSpring/controllers/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itkrol/KrolSpring/controllers/BlogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itkrol/KrolSpring/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itkrol/KrolSpring/controllers/MainController.class" afterDir="false" />
-    </list>
+    <list default="true" id="2e83bc98-dc1c-4859-b902-2914f4f3a986" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -445,7 +430,7 @@
       <workItem from="1622811515101" duration="19983000" />
       <workItem from="1622886959493" duration="2468000" />
       <workItem from="1622891460112" duration="3101000" />
-      <workItem from="1622898526040" duration="250000" />
+      <workItem from="1622898526040" duration="708000" />
     </task>
     <task id="LOCAL-00001" summary="сайт + начальный секьюрити">
       <created>1622721073409</created>
@@ -454,11 +439,18 @@
       <option name="project" value="LOCAL" />
       <updated>1622721073409</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="успешная авторизация по пользователю">
+      <created>1622898943009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622898943009</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81071000" />
+    <option name="totallyTimeSpent" value="81529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -488,11 +480,11 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.32897604" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.36492375" />
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.36492375" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.19031903" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3278867" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.12636165" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15671642" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15671642" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -550,7 +542,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="сайт + начальный секьюрити" />
-    <option name="LAST_COMMIT_MESSAGE" value="сайт + начальный секьюрити" />
+    <MESSAGE value="успешная авторизация по пользователю" />
+    <option name="LAST_COMMIT_MESSAGE" value="успешная авторизация по пользователю" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -755,6 +748,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,9 +1,6 @@
 package com.itkrol.KrolSpring.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Post {
@@ -12,6 +9,10 @@ public class Post {
     private Long id;
     private String title, anons, full_text;
     private int views;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id")
+    private Course course;
 
     public Long getId() {
         return id;

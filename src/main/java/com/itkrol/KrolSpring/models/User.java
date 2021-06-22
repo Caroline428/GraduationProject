@@ -21,6 +21,17 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Course> courses;
+
     public User() {
 
     }

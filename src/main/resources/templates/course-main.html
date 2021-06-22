@@ -1,21 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Статьи</title>
+    <title>Курсы</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 <div class="container mt-5">
-    <div th:each="el : ${post}" class="alert alert-info mt-2">
-        <h1 th:text="${el.title}"/>
-        <p th:text="${el.full_text}" />
-        <a th:href="'/blog/' +${el.id} + '/edit'" class="btn btn-warning">Редактировать</a> <br>
-        <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
-            <button class = "btn btn-warning" type="submit">Удалить</button>
-        </form>
-
+    <h1>Каталог курсов</h1>
+    <div th:each="el : ${courses}" class="alert alert-info mt-2">
+        <h3 th:text="${el.name}"/>
+        <a th:href="'/course' +'/'+${el.id}" class="btn btn-warning">Детальнее</a>
 
     </div>
 </div>

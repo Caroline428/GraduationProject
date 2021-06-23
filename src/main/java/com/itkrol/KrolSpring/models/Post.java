@@ -14,6 +14,14 @@ public class Post {
     @JoinColumn(name = "course_id")
     private Course course;
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
     public Long getId() {
         return id;
     }
@@ -26,7 +34,8 @@ public class Post {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title)
+    {
         this.title = title;
     }
 

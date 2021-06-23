@@ -4,20 +4,29 @@
 <head>
     <title>Блог сайта</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 
-<div class="container mt-5 mb-5">
-    <h1>Регистрация пользователя</h1>
+<div class="text-center">
+    <main style="width: 100%; max-width: 330px; padding: 15px; margin: auto" >
+    <h1 class="h3 mb-3 fw-normal">Регистрация пользователя</h1>
     <form action="/registration" method="post">
-        <input type="text" name="username" placeholder="Введите имя" class="form-control"><br>
-        <input type="text" name="password" placeholder="Введите пароль" class="form-control"><br>
-        <button type="submit" class="btn btn-success">Регистрация</button>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="name" name="username" placeholder="Введите имя" >
+            <label for="name">Введите имя</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id = "password" name="password" placeholder="Введите пароль">
+            <label for="password">Введите пароль</label>
+        </div>
+        <button type="submit" class="w-100 btn btn-lg btn-primary">Регистрация</button>
     </form>
+    </main>
 </div>
+
 
 <div th:insert="blocks/footer :: footer"></div>
 

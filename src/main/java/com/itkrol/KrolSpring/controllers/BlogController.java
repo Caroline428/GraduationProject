@@ -1,7 +1,13 @@
 package com.itkrol.KrolSpring.controllers;
 
+import com.itkrol.KrolSpring.models.Course;
 import com.itkrol.KrolSpring.models.Post;
+import com.itkrol.KrolSpring.models.Test;
+import com.itkrol.KrolSpring.models.Video;
+import com.itkrol.KrolSpring.repo.CourseRepository;
 import com.itkrol.KrolSpring.repo.PostRepository;
+import com.itkrol.KrolSpring.repo.TestRepository;
+import com.itkrol.KrolSpring.repo.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,38 +16,70 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import java.util.ArrayList;
+
 import java.util.Optional;
 
 @Controller
 public class BlogController {
     @Autowired
     private PostRepository postRepository;
+    @Autowired
+    private CourseRepository courseRepository;
+    @Autowired
+    private TestRepository testRepository;
+    @Autowired
+    private VideoRepository videoRepository;
 
-
-    @GetMapping("/blog")
-    public String blogMain (Model model) {
-        Iterable<Post> posts = postRepository.findAll();
-        model.addAttribute("posts", posts);
-        return "blog-main";
+    @GetMapping("/course")
+    public String courseMain (Model model) {
+        Iterable<Course> courses = courseRepository.findAll();
+        model.addAttribute("courses", courses);
+        return "course-main";
     }
 
+
+    @GetMapping("/course/{id}")
+    public String blogMain (@PathVariable(value = "id") Long id, Model model) {
+        if(!courseRepository.existsById(id)) {
+            return "redirect:/course";
+        }
+        Optional<Course> course = courseRepository.findById(id);
+        ArrayList<Course> res = new ArrayList<>();
+        course.ifPresent(res::add);
+        model.addAttribute("course", res);
+
+        Iterable<Post> posts = postRepository.findAll();
+        model.addAttribute("posts", posts);
+
+        Iterable<Video> videos = videoRepository.findAll();
+        model.addAttribute("videos", videos);
+
+        Iterable<Test> tests = testRepository.findAll();
+        model.addAttribute("tests", tests);
+
+
+        return "course-details";
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     @GetMapping("/blog/add")
-    public String blogAdd (Model model) {
+    public String blogAdd ( Model model) {
         return "blog-add";
     }
 
-    @PostMapping("/blog/add")
+     @PostMapping("/blog/add")
     public String blogPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
         Post post = new Post(title, anons, full_text);
         postRepository.save(post);
-        return "redirect:/blog";
+        return "redirect:/course";
     }
 
     @GetMapping("/blog/{id}")
     public String blogDetails (@PathVariable(value = "id") Long id,  Model model) {
         if(!postRepository.existsById(id)) {
-            return "redirect:/blog";
+            return "redirect:/course";
         }
         Optional<Post> post = postRepository.findById(id);
         ArrayList<Post> res = new ArrayList<>();
@@ -54,7 +92,7 @@ public class BlogController {
     @GetMapping("/blog/{id}/edit")
     public String blogEdit (@PathVariable(value = "id") Long id,  Model model) {
         if(!postRepository.existsById(id)) {
-            return "redirect:/blog";
+            return "redirect:/course";
         }
         Optional<Post> post = postRepository.findById(id);
         ArrayList<Post> res = new ArrayList<>();
@@ -71,13 +109,13 @@ public class BlogController {
         post.setAnons(anons);
         post.setFull_text(full_text);
         postRepository.save(post);
-        return "redirect:/blog";
+        return "redirect:/course";
     }
 
     @PostMapping("/blog/{id}/remove")
     public String blogPostDelete(@PathVariable(value = "id") Long id, Model model) {
         Post post = postRepository.findById(id).orElseThrow(null);
         postRepository.delete(post);
-        return "redirect:/blog";
+        return "redirect:/course";
     }
 }

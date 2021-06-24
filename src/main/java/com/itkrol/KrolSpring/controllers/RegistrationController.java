@@ -22,12 +22,17 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(@RequestParam String username, @RequestParam String password, Model model ) {
+    public String addUser(@RequestParam String username, @RequestParam String password, @RequestParam String nam,
+                          @RequestParam String sec, @RequestParam String email, @RequestParam Integer age, Model model ) {
         User userForm = new User();
         userForm.setUsername(username);
         userForm.setPassword(password);
+        userForm.setFirstname(nam);
+        userForm.setSecondname(sec);
+        userForm.setEmail(email);
+        userForm.setAge(age);
         userService.saveUser(userForm);
-        return "redirect:/blog";
+        return "redirect:/course";
 
     }
 }

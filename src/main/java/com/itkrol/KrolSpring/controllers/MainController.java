@@ -47,4 +47,25 @@ public class MainController {
         return "profile";
     }
 
+    @GetMapping("/profile_admin/{id}")
+    public String profileAdmin (@PathVariable(value = "id") Long id, Model model) {
+        model.addAttribute("title","Профиль");
+        if(!userRepository.existsById(id)) {
+            return "redirect:/course";
+        }
+        Optional<User> post = userRepository.findById(id);
+        ArrayList<User> res = new ArrayList<>();
+        post.ifPresent(res::add);
+        model.addAttribute("user", res);
+
+        return "profile-admin";
+    }
+
+    @GetMapping("/users")
+    public String courseMain (Model model) {
+        Iterable<User> users = userRepository.findAll();
+        model.addAttribute("users", users);
+        return "users";
+    }
+
 }

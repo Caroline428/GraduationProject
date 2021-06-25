@@ -26,7 +26,13 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Course> courses;
+
+
+
     public Set<Course> getCourses() {
+
         return courses;
     }
 
@@ -34,8 +40,7 @@ public class User implements UserDetails {
         this.courses = courses;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Course> courses;
+
 
     public String getEmail() {
         return email;

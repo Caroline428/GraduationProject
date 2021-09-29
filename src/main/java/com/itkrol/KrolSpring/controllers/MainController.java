@@ -1,15 +1,13 @@
 package com.itkrol.KrolSpring.controllers;
 
-import com.itkrol.KrolSpring.models.Post;
+
 import com.itkrol.KrolSpring.models.User;
 import com.itkrol.KrolSpring.repo.UserRepository;
-import com.itkrol.KrolSpring.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.ArrayList;
 import java.util.Optional;
 

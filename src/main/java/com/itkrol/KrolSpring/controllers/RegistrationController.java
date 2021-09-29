@@ -15,12 +15,10 @@ public class RegistrationController {
 
     @Autowired
     private UserService userService;
-
     @GetMapping("/registration")
     public String registration(Model model) {
         return "registration.html";
     }
-
     @PostMapping("/registration")
     public String addUser(@RequestParam String username, @RequestParam String password, @RequestParam String nam,
                           @RequestParam String sec, @RequestParam String email, @RequestParam Integer age, Model model ) {

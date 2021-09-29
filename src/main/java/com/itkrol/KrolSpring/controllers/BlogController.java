@@ -39,7 +39,6 @@ public class BlogController {
         return "course-main";
     }
 
-
     @GetMapping("/course/{id}")
     public String blogMain (@PathVariable(value = "id") Long id, Model model) {
         if(!courseRepository.existsById(id)) {
@@ -49,7 +48,6 @@ public class BlogController {
         ArrayList<Course> res = new ArrayList<>();
         course.ifPresent(res::add);
         model.addAttribute("course", res);
-
         Iterable<Post> posts = postRepository.findAll();
         model.addAttribute("posts", posts);
 
@@ -104,12 +102,12 @@ public class BlogController {
 
     @PostMapping("/blog/{id}/edit")
     public String blogPostUpdate(@PathVariable(value = "id") Long id, @RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
-        Post post = postRepository.findById(id).orElseThrow(null);
-        post.setTitle(title);
-        post.setAnons(anons);
-        post.setFull_text(full_text);
-        postRepository.save(post);
-        return "redirect:/course";
+            Post post = postRepository.findById(id).orElseThrow(null);
+            post.setTitle(title);
+            post.setAnons(anons);
+            post.setFull_text(full_text);
+            postRepository.save(post);
+            return "redirect:/course";
     }
 
     @PostMapping("/blog/{id}/remove")
